@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="/css/StyleSheet1.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link rel="/shortcut icon" href="img/favicon(3).ico" />
+    <script src="/js/JavaScript.js"></script>
+    <script src="/js/jquery-2.1.3.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <script>
+        $(window).scroll(function () {
+            var wScroll = $(this).scrollTop();
+
+            $('.logo').css({
+                'transform': 'translate(0px, -' + wScroll / 5 + '%)'
+            });
+
+            $('.lemon').css({
+                'transform': 'translate(0px, -' + wScroll / 10 + '%)'
+            });
+            if (wScroll > $('.images').offset().top - ($(window).height() / 1.3)) {
+                $('.columns').each(function (i) {
+                    setTimeout(function () {
+                        $('.columns').eq(i).addClass('is-showing');
+                    }, 10 * (i + 1));
+                });
+            }
+            if (wScroll > $('.mywindow').offset().top - $(window).height()) {
+                $('.mywindow').css({ 'background-position': 'center' + (wScroll - $('.mywindow').offset().top) + 'px' })
+
+                var opacity = (wScroll - $('.mywindow').offset().top + 400) / (wScroll / 5)
+                $('.mywindow').css({ 'opacity': opacity });
+            }
+        })
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="box">
+            <div class="lemon">
+            </div>
+            <div class="logo">
+            </div>
+        </div>
+
+    </header>
+
+
+    <section>
+        <div class="content"></div>
+        <div class="mydiv">
+            <article class="myarticle">
+                <h1>Put your diet on autopilot</h1>
+                <hr />
+                <br />
+                <p1>
+                    These days it feels like just about everyone is a nutrition expert, but so few people are happy with the way they eat. <br />
+                    <b>BiteMe</b> is all about turning what you know into what you do. <br />
+                    The best nutrition strategy is the one that actually happens, because behaviors, not ideas, are the secret to changing your diet.
+
+                </p1>
+                <br />
+                <br />
+                <hr />
+          
+                <div class="images">
+                    <div class="row img-row">
+                        <figure class="columns four">
+                            <a href="About.aspx">
+                                <img src="/img/a.jpg" style="width:220px; height: 220px;">
+                                <figcaption><strong>ABOUT BYTE ME</strong></figcaption>
+                            </a>
+                        </figure>
+                        <figure class="columns four">
+                            <a href="RegistrationPage.aspx">
+                                <img src="/img/b.jpg" style="width:220px; height: 220px;">
+                                <figcaption><strong>GET STARTED</strong></figcaption>
+                            </a>
+</figure>
+                        <figure class="columns four">
+                            <img src="/img/c.jpg" style="width:220px; height: 220px;">
+                            <figcaption><strong>SET YOUR GOAL</strong></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <br />
+                <hr />
+                <div class="mywindow">
+                    <div class="window-tint">
+                        <div class="promo">
+                            GET STARTED<br />
+                            <a class="window-cta" href="LoginPage.aspx">login</a>
+                            <a class="window-cta" href="RegistrationPage.aspx">register</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <footer>
+        <div class="row footer-stuff">
+            <div class="columns six">
+                <strong>FIND US ON</strong><br />
+                <a href="#">
+                    <img src="/img/IntagramIcon.png" style="width: 40px; height: 40px;" alt="Instagram" />
+                </a>
+                <a href="#">
+                    <img src="/img/FacebookIcon.png" style="width: 40px; height: 40px;" alt="Facebook" />
+                </a>
+                <a href="#">
+                    <img src="/img/PinterestIcon.png" style="width: 40px; height: 40px;" alt="Pinterest" />
+                </a>
+                <a href="#">
+                    <img src="/img/GoogleIcon.png" style="width: 40px; height: 40px;" alt="Google" />
+                </a>
+                <a href="#">
+                    <img src="/img/TwitterIcon.png" style="width: 40px; height: 40px;" alt="Tweeter" />
+                </a>
+                <p style="font-size: 11px;">
+                    &copy; 2016 ByteMe
+            </div>
+
+            <div class="columns six">
+                <p><strong>Do you have an account?</strong> Register right now!</p>
+                <form class="row2">
+                    <div class="promo2">
+                        <a class="window-cta3" href="/Pages/Public/LoginPage.aspx">login</a>
+                        <a class="window-cta3" href="/Pages/Public/RegistrationPage.aspx">register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

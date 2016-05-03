@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RegisterLoginMaster.master.cs" Inherits="proba4.RegisterLoginMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Welcome</title>
+
+    <link href="<%= Page.ResolveUrl("~/css/bootstrap.min.css")%>" rel="stylesheet" />
+    <link href="<%= Page.ResolveUrl("~/css/bootstrap.css")%>" rel="stylesheet" />
+    <link rel="<%= Page.ResolveUrl("~/shortcut icon")%>" href="<%= Page.ResolveUrl("~/img/favicon(3).ico")%>" />
+    <link href="<%= Page.ResolveUrl("~/css/StyleSheet1.css")%>" rel="stylesheet" />
+    <script src="<%= Page.ResolveUrl("~/js/JavaScript.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/jquery-2.1.3.min.js")%>"></script>
+    <script src="<%= Page.ResolveUrl("~/js/bootstrap.js")%>"></script>
+
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+
+        .auto-style2 {
+            width: 100%;
+        }
+
+        .auto-style3 {
+            width: 239px;
+            text-align: right;
+        }
+
+        .auto-style4 {
+            width: 293px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(window).scroll(function () {
+            var wScroll = $(this).scrollTop();
+
+            $('.logo').css({
+                'transform': 'translate(0px, -' + wScroll / 5 + '%)'
+            });
+
+            $('.lemon').css({
+                'transform': 'translate(0px, -' + wScroll / 10 + '%)'
+            });
+            if (wScroll > $('.images').offset().top - ($(window).height() / 1.3)) {
+                $('.columns').each(function (i) {
+                    setTimeout(function () {
+                        $('.columns').eq(i).addClass('is-showing');
+                    }, 10 * (i + 1));
+                });
+            }
+            if (wScroll > $('.mywindow').offset().top - $(window).height()) {
+                $('.mywindow').css({ 'background-position': 'center' + (wScroll - $('.mywindow').offset().top) + 'px' })
+
+                var opacity = (wScroll - $('.mywindow').offset().top + 400) / (wScroll / 5)
+                $('.mywindow').css({ 'opacity': opacity });
+            }
+        })
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="box3">
+            <div class="lemon2">
+            </div>
+            <div class="logo2">
+            </div>
+        </div>
+    </header>
+
+    <form id="form1" runat="server" class="box2">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer>
+        <div class="row footer-stuff">
+            <div class="columns six">
+                <strong>FIND US ON</strong><br />
+                <a href="#">
+                    <img src="/img/IntagramIcon.png" style="width: 40px; height: 40px;" alt="Instagram" /></a>
+                <a href="#">
+                    <img src="/img/FacebookIcon.png" style="width: 40px; height: 40px;" alt="Facebook" /></a>
+                <a href="#">
+                    <img src="/img/PinterestIcon.png" style="width: 40px; height: 40px;" alt="Pinterest" /></a>
+                <a href="#">
+                    <img src="/img/GoogleIcon.png" style="width: 40px; height: 40px;" alt="Google" /></a>
+                <a href="#">
+                    <img src="/img/TwitterIcon.png" style="width: 40px; height: 40px;" alt="Tweeter" /></a>
+                <p style="font-size: 11px;">
+                    &copy; 2016 ByteMe
+           
+            </div>
+
+            <div class="columns six">
+                <p><strong>Do you have an account?</strong> Register right now!</p>
+                <form class="row2">
+                    <div class="promo2">
+                        <asp:HyperLink class="window-cta3" runat="server" NavigateUrl="~/Pages/Public/LoginPage.aspx">login</asp:HyperLink>
+                        <asp:HyperLink class="window-cta3" runat="server" NavigateUrl="~/Pages/Public/RegistrationPage.aspx">Register</asp:HyperLink>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
